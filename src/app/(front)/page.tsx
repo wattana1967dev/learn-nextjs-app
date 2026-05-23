@@ -1,10 +1,21 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      {/* Prefetched when the link is hovered or enters the viewport */}
-       <Link href="/">Home</Link> | <Link href="/about">About Us</Link> | <Link href="/sign-in">SignIn</Link>
-    </div>
+    <section>
+       {/* Prefetched when the link is hovered or enters the viewport */}
+      <h1 className="mb-4 text-3xl font-bold">HomePage</h1>
+
+      <div className="flex gap-3">
+        <Button asChild>
+          <Link href="/about">About Us</Link>
+        </Button>
+
+        <Button asChild variant="outline">
+          <Link href="/sign-in">Login</Link>
+        </Button>
+      </div>
+    </section>
   );
 }

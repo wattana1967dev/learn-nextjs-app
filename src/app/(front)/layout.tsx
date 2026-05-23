@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Prompt } from "next/font/google";
 import "../globals.css";
+import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+export const promptFont = Prompt ( {
+  weight: ["400", "500", "700"],
+  subsets: ["thai"],
+  display: "swap"
 });
 
 export const metadata: Metadata = {
@@ -24,13 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="th"
     >
-      <body className="min-h-full flex flex-col">
-      <h1>root layout header 2</h1>
-      <hr />
-           {children}
+      <body className={promptFont.className}>
+      <header className="border-b p-4">
+        <nav className="flex gap-4">
+          <Link href= "/">Home</Link>
+          <Link href= "/about">About Us</Link>
+          <Link href= "/sign-in">Login</Link>
+          <Link href= "/sign-up">Register</Link>
+        </nav>
+      </header>
+      <main className="p-6"> {children}</main>
       </body>
     </html>
   );
