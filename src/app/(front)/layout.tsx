@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
 import "../globals.css";
 import Link from "next/link";
+import Navbar from "@/components/navbar";
 
 export const promptFont = Prompt ( {
   weight: ["400", "500", "700"],
@@ -24,15 +25,18 @@ export default function RootLayout({
       lang="th"
     >
       <body className={promptFont.className}>
-      <header className="border-b p-4">
-        <nav className="flex gap-4">
-          <Link href= "/">Home</Link>
-          <Link href= "/about">About Us</Link>
-          <Link href= "/sign-in">Login</Link>
-          <Link href= "/sign-up">Register</Link>
-        </nav>
-      </header>
-      <main className="p-6"> {children}</main>
+        <Navbar />
+          <header className="border-b p-4">
+            <nav className="flex gap-4">
+              <Link href= "/">Home</Link>
+              <Link href= "/about">About Us</Link>
+              <Link href= "/sign-in">Login</Link>
+              <Link href= "/sign-up">Register</Link>
+            </nav>
+          </header>
+          <main>
+            {children}
+          </main>
       </body>
     </html>
   );
