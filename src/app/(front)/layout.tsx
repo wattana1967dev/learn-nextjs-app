@@ -3,6 +3,7 @@ import { Prompt } from "next/font/google";
 import "../globals.css";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
+import { Html } from "next/document";
 
 export const promptFont = Prompt ( {
   weight: ["400", "500", "700"],
@@ -21,22 +22,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="th"
-    >
+      <html lang="th" suppressHydrationWarning>
       <body className={promptFont.className}>
         <Navbar />
-          <header className="border-b p-4">
-            <nav className="flex gap-4">
-              <Link href= "/">Home</Link>
-              <Link href= "/about">About Us</Link>
-              <Link href= "/sign-in">Login</Link>
-              <Link href= "/sign-up">Register</Link>
-            </nav>
-          </header>
-          <main>
-            {children}
-          </main>
+
+        <nav className="flex gap-4 border-b p-4">
+          <Link href="/">Home</Link>
+          <Link href="/about">About Us</Link>
+          <Link href="/sign-in">Login</Link>
+          <Link href="/sign-up">Register</Link>
+        </nav>
+        
+        {children}
       </body>
     </html>
   );

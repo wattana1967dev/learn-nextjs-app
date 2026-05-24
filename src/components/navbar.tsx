@@ -17,11 +17,10 @@ const Navbar = () => {
             Sign In
           </Button>
           <Button>Get Started</Button>
-          {/* 
-          {/* Mobile Menu */}
+          /* Mobile Menu */
           {/* <div className="md:hidden">
             <NavigationSheet />
-          </div> */} */
+          </div>  */}
         </div>
       </div>
     </nav>
