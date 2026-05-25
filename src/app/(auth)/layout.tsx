@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Sarabun } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
-export const sarabunFont = Sarabun ( {
-  weight: ["400", "500", "700"],
-  subsets: ["thai"],
-  display: "swap"
+const geistSans = Geist ( {
+  variable: "--font-getst-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono ( {
+  variable: "--font-getst-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -20,12 +24,11 @@ export default function AuthLayout({
 }>) {
   return (
     <html
-      lang="th"
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className={sarabunFont.className}>
-      <main className="flex min-h-screen items-center justify-center p-6">
-         {children}
-      </main>
+      <body className="min-h-full flex flex-col">
+        {children}
       </body>
     </html>
   );
