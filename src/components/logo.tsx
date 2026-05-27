@@ -6,6 +6,7 @@ export const Logo = () => (
       alt="โลโก้ Next.js" 
       width={0} 
       height={0}
+      // loading="eager" คือ แสดงโลโก้โหลดเลย
       loading="eager"
       style={{
         width: 124,
