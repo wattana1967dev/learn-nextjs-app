@@ -18,9 +18,7 @@ async function fetchProducts(): Promise<Product[]> {
 }
 
 const Features = async () => {
-  
   const products = await fetchProducts();
-
   return (
     <div className="px-6 py-20">
       <h2 className="mx-auto max-w-3xl text-center font-medium text-4xl tracking-[-0.045em] sm:text-[2.75rem]">
