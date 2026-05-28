@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import Navbar from "@/components/navbar";
 
 export const promptFont = Prompt({
@@ -20,8 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html 
-      lang="th">
+    <html lang="th" suppressHydrationWarning>
       <body className={promptFont.className}>
         <Navbar />
         {children}

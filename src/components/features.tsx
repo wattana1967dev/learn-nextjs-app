@@ -1,3 +1,12 @@
+type Product = {
+  id: number;
+  barcode: string;
+  name: string;
+  price: number;
+  category: {
+  name: string;
+  };
+};
 
 async function fetchProducts(): Promise<Product[]> {
   const response = await fetch("https://backend.codingthailand.com/v2/products");
